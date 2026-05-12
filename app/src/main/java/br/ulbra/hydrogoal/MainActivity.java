@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                 double cT = (peso * 35) + extra;
                 double r = cT - consumo;
 
+                if (peso <= 0 || idade <= 0){
+                    Toast.makeText(MainActivity.this, "Não como calcular se for zero", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 txRes.setText("RESULTADO ESTIMADO:"+"\n"
                         +"Meta diaria: " + cT + "ml" +
